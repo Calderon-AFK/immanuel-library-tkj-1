@@ -1,0 +1,3 @@
+Keuntungan memisahkan header dan footer menjadi file component tersendiri adalah menghindari duplikasi kode (DRY - Don't Repeat Yourself), memudahkan pemeliharaan kode (maintenance) karena perubahan tampilan cukup dilakukan di satu file component, serta menjaga struktur berkas utama tetap bersih dan fokus pada konten halaman.
+
+Masalah serupa terjadi pada elemen sidebar dan topbar di halaman-halaman admin (Buku, Kategori, Penulis, Pengguna, Profil), di mana kode HTML sidebar dan topbar ditulis ulang secara berulang di setiap file halaman admin.
