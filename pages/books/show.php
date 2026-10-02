@@ -3,6 +3,8 @@ $pageTitle = "Detail Buku";
 $pageSubtitle = "Informasi lengkap buku beserta kategori dan penulis";
 
 require '../../repositories/book-repository.php';
+
+$book = getBook();
 ?>
 <!DOCTYPE html>
 <html lang="id">
