@@ -2,9 +2,11 @@
 $pageTitle = "Tambah Buku";
 $pageSubtitle = "Lengkapi data buku, kategori, dan penulis";
 
-// Data kategori & penulis dummy untuk mengisi dropdown/checkbox di form
-$categories = ["Fiksi", "Sains", "Sejarah", "Teknologi"];
-$authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer", "Sapardi Djoko Damono"];
+require_once '../../repositories/category-repository.php';
+require_once '../../repositories/author-repository.php';
+
+$categories = getCategories();
+$authors = getAuthors();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -25,7 +27,7 @@ $authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer
       <?php require_once '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form method="POST" action="../../actions/books/store.php">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Buku</div>
             <div class="form-group">
@@ -50,8 +52,9 @@ $authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer
               <div class="form-group">
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
-                  <?php foreach ($categories as $index => $category): ?>
-                    <option value="<?= $index + 1 ?>"><?= $category ?></option>
+                  <option value="">Pilih Kategori</option>
+                  <?php foreach ($categories as $category): ?>
+                    <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>
@@ -67,10 +70,10 @@ $authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer
             <div class="form-group">
               <label>Pilih Penulis (bisa lebih dari satu)</label>
               <div class="checkbox-grid">
-                <?php foreach ($authors as $index => $authorName): ?>
+                <?php foreach ($authors as $author): ?>
                   <label class="checkbox-item">
-                    <input type="checkbox" name="author_ids[]" value="<?= $index + 1 ?>">
-                    <?= $authorName ?>
+                    <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>">
+                    <?= $author['name'] ?>
                   </label>
                 <?php endforeach; ?>
               </div>
