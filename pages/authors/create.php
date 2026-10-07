@@ -34,7 +34,7 @@ $pageSubtitle = "Daftarkan penulis baru ke sistem";
             </div>
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Penulis</button>
+              <button type="submit" name="store" class="btn btn-primary">Simpan Penulis</button>
             </div>
           </div>
         </form>
