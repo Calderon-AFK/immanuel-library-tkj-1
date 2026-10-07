@@ -81,7 +81,7 @@ $authors = getAuthors();
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Buku</button>
+              <button type="submit" name="store" class="btn btn-primary">Simpan Buku</button>
             </div>
           </div>
         </form>
