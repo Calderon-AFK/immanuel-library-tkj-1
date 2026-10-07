@@ -1,10 +1,18 @@
 <?php
 
 $users = [
-    ["id" => 1, "name" => "Admin Utama", "email" => "admin@ski.sch.id"],
-    ["id" => 2, "name" => "Budi Santoso", "email" => "budi.santoso@siswa.ski.sch.id"],
-    ["id" => 3, "name" => "Siti Aminah", "email" => "siti.aminah@siswa.ski.sch.id"],
-    ["id" => 4, "name" => "Richard Marcell", "email" => "richard.m@ski.sch.id"],
+    [
+        'id' => 1,
+        'name' => 'Admin Utama',
+        'email' => 'admin@gmail.com',
+        'role' => 'Admin'
+    ],
+    [
+        'id' => 2,
+        'name' => 'Richard Marcell',
+        'email' => 'richard@gmail.com',
+        'role' => 'Member'
+    ]
 ];
 
 function getUsers() {
@@ -12,20 +20,15 @@ function getUsers() {
     return $users;
 }
 
-function getUser() {
-    return [
-        "id"   => 2,
-        "name" => "Budi Santoso",
-        "email" => "budi.santoso@siswa.ski.sch.id",
-        "role" => "member",
-    ];
-}
-
-function getProfile() {
-    return [
-        "user_id" => 1,
-        "phone"   => "0812-3456-7890",
-        "address" => "Jl. Merdeka No. 21, Pontianak, Kalimantan Barat",
-        "bio"     => "Murid kelas XI TKJ yang gemar membaca novel fiksi dan buku pengembangan diri.",
-    ];
+function getUser($id = null) {
+    global $users;
+    if ($id === null) {
+        return $users[0] ?? null;
+    }
+    foreach ($users as $user) {
+        if ($user['id'] == $id) {
+            return $user;
+        }
+    }
+    return $users[0] ?? null;
 }

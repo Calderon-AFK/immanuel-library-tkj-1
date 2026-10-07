@@ -1,9 +1,24 @@
 <?php
 
 $authors = [
-  ["id" => 1, "name" => "Andrea Hirata",          "total_books" => 1],
-  ["id" => 2, "name" => "Tere Liye",               "total_books" => 1],
-  ["id" => 3, "name" => "J.K. Rowling",            "total_books" => 1],
-  ["id" => 4, "name" => "Pramoedya Ananta Toer",   "total_books" => 2],
-  ["id" => 5, "name" => "Sapardi Djoko Damono",    "total_books" => 1],
+    ['id' => 1, 'name' => 'Budi Raharjo', 'email' => 'budi@example.com', 'bio' => 'Penulis buku pemrograman'],
+    ['id' => 2, 'name' => 'Ahmad Hanafi', 'email' => 'ahmad@example.com', 'bio' => 'Pakar basis data']
 ];
+
+function getAuthors() {
+    global $authors;
+    return $authors;
+}
+
+function getAuthor($id = null) {
+    global $authors;
+    if ($id === null) {
+        return $authors[0] ?? null;
+    }
+    foreach ($authors as $author) {
+        if ($author['id'] == $id) {
+            return $author;
+        }
+    }
+    return $authors[0] ?? null;
+}

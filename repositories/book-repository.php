@@ -1,55 +1,46 @@
 <?php
 
 $books = [
-  [
-    "id" => 1,
-    "title" => "Laskar Pelangi",
-    "category" => "Fiksi",
-    "year" => 2005,
-    "stock" => 12,
-    "authors" => ["Andrea Hirata"],
-  ],
-  [
-    "id" => 2,
-    "title" => "Bumi",
-    "category" => "Fiksi",
-    "year" => 2014,
-    "stock" => 8,
-    "authors" => ["Tere Liye"],
-  ],
-  [
-    "id" => 3,
-    "title" => "Harry Potter dan Batu Bertuah",
-    "category" => "Fiksi",
-    "year" => 1997,
-    "stock" => 5,
-    "authors" => ["J.K. Rowling"],
-  ],
-  [
-    "id" => 4,
-    "title" => "Bumi Manusia",
-    "category" => "Sejarah",
-    "year" => 1980,
-    "stock" => 6,
-    "authors" => ["Pramoedya Ananta Toer"],
-  ],
-  [
-    "id" => 5,
-    "title" => "Antologi Rasa Nusantara",
-    "category" => "Fiksi",
-    "year" => 2021,
-    "stock" => 4,
-    "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"],
-  ],
+    [
+        'id' => 1,
+        'title' => 'Pemrograman Web dengan PHP',
+        'author' => 'Budi Raharjo',
+        'publisher' => 'Informatika',
+        'year' => 2022,
+        'isbn' => '978-602-6232-24-4',
+        'category' => 'Pemrograman',
+        'synopsis' => 'Buku ini membahas dasar-dasar pemrograman web menggunakan PHP.',
+        'stock' => 10,
+        'cover' => 'https://via.placeholder.com/150'
+    ],
+    [
+        'id' => 2,
+        'title' => 'Belajar MySQL untuk Pemula',
+        'author' => 'Ahmad Hanafi',
+        'publisher' => 'Andi Publisher',
+        'year' => 2021,
+        'isbn' => '978-979-29-5123-1',
+        'category' => 'Basis Data',
+        'synopsis' => 'Panduan praktis menguasai database MySQL dari dasar.',
+        'stock' => 5,
+        'cover' => 'https://via.placeholder.com/150'
+    ]
 ];
 
-$book = [
-  "id" => 5,
-  "title" => "Antologi Rasa Nusantara",
-  "isbn" => "978-602-1234-56-7",
-  "year" => 2021,
-  "stock" => 4,
-  "category" => "Fiksi",
-  "description" => "Kumpulan puisi dan cerita pendek dari berbagai penulis Nusantara.",
-  "authors" => ["Pramoedya Ananta Toer", "Sapardi Djoko Damono"],
-];
+function getBooks() {
+    global $books;
+    return $books;
+}
+
+function getBook($id = null) {
+    global $books;
+    if ($id === null) {
+        return $books[0] ?? null;
+    }
+    foreach ($books as $book) {
+        if ($book['id'] == $id) {
+            return $book;
+        }
+    }
+    return $books[0] ?? null;
+}
