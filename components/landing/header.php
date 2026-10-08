@@ -1,13 +1,17 @@
-<header class="navbar">
-    <div class="logo">
-        <h2>Immanuel Library</h2>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="pages/books/index.php">Katalog Buku</a></li>
-            <li><a href="pages/authors/index.php">Penulis</a></li>
-            <li><a href="pages/auth/login.php">Login</a></li>
-        </ul>
+<header>
+    <nav class="navbar">
+      <a href="/index.php" class="brand">
+        <span class="logo-badge">PD</span>
+        Immanuel Library
+      </a>
+      <div class="nav-links">
+        <a href="/index.php" class="active">Beranda</a>
+        <a href="/pages/books/index.php">Katalog Buku</a>
+        <a href="/pages/authors/index.php">Penulis</a>
+      </div>
+      <div class="nav-actions">
+        <a href="/pages/auth/login.php" class="btn btn-outline btn-sm">Masuk</a>
+        <a href="/pages/auth/register.php" class="btn btn-primary btn-sm">Daftar</a>
+      </div>
     </nav>
-</header>
+  </header>
