@@ -20,11 +20,11 @@ $books = getBooks();
   <div class="app-shell">
     
     <!-- Component Sidebar -->
-    <?php require_once '../../components/admin/sidebar.php'; ?>
+    <?php require '../../components/admin/sidebar.php'; ?>
 
     <main class="app-main">
       <!-- Component Topbar -->
-      <?php require_once '../../components/admin/topbar.php'; ?>
+      <?php require  '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
         <div class="toolbar">

@@ -22,13 +22,24 @@ function getUsers() {
 
 function getUser($id = null) {
     global $users;
+
     if ($id === null) {
         return $users[0] ?? null;
     }
+
     foreach ($users as $user) {
         if ($user['id'] == $id) {
             return $user;
         }
     }
+
     return $users[0] ?? null;
+}
+
+function getProfile() {
+    return [
+        'phone' => '',
+        'address' => '',
+        'bio' => ''
+    ];
 }
