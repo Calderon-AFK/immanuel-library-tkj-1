@@ -78,13 +78,9 @@ $books = getBooks();
                   <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
                   <td>
                     <div class="chip-list">
-                      <?php if (is_array($book['authors'])): ?>
                         <?php foreach ($book['authors'] as $author): ?>
                           <span class="chip"><?= $author ?></span>
                         <?php endforeach; ?>
-                      <?php else: ?>
-                        <span class="chip"><?= $book['authors'] ?></span>
-                      <?php endif; ?>
                     </div>
                   </td>
                   <td><?= $book['stock'] ?></td>

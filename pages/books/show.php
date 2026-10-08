@@ -39,9 +39,7 @@ $book = getBook();
               <div class="detail-label">Penulis</div>
               <div class="detail-value">
                 <div class="chip-list">
-                  <?php foreach ($book['authors'] as $authorName): ?>
-                    <span class="chip"><?= $authorName ?></span>
-                  <?php endforeach; ?>
+                  <span class="chip"><?= $book['author'] ?></span>
                 </div>
               </div>
             </div>
@@ -51,7 +49,7 @@ $book = getBook();
             </div>
             <div class="detail-row">
               <div class="detail-label">Deskripsi</div>
-              <div class="detail-value"><?= $book['description'] ?></div>
+              <div class="detail-value"><?= $book['synopsis'] ?></div>
             </div>
 
             <div class="form-actions" style="border-top:none; padding-top:6px;">
