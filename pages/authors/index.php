@@ -3,8 +3,10 @@ $pageTitle = "Manajemen Penulis";
 $pageSubtitle = "Kelola data penulis yang terdaftar di sistem";
 
 require_once '../../repositories/author-repository.php';
+require_once '../../repositories/book-repository.php';
 
 $authors = getAuthors();
+$books = getBooks();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -54,7 +56,7 @@ $authors = getAuthors();
                       <?= $author['name'] ?>
                     </div>
                   </td>
-                  <td><span class="badge badge-muted"><?= $author['total_books'] ?? 0 ?> buku</span></td>
+                  <td><span class="badge badge-muted"><?= count(array_filter($books, fn($book) => in_array($author['name'], $book['authors']))) ?> buku</span></td>
                   <td>
                     <div class="cell-actions">
                       <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>

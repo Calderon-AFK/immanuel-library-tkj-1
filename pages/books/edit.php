@@ -2,19 +2,16 @@
 $pageTitle = "Edit Buku";
 $pageSubtitle = "Perbarui data buku, kategori, dan penulis";
 
+require_once '../../repositories/book-repository.php';
 require_once '../../repositories/category-repository.php';
 require_once '../../repositories/author-repository.php';
 
+$book = getBook();
 $categories = getCategories();
 $authors = getAuthors();
 
-$book = [
-    "id" => 5, "title" => "Antologi Rasa Nusantara", "isbn" => "978-602-1234-56-7",
-    "year" => 2021, "stock" => 4, "category_id" => 1,
-    "description" => "Kumpulan puisi dan cerita pendek dari berbagai penulis Nusantara.",
-    "author_ids" => [4, 5],
-];
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

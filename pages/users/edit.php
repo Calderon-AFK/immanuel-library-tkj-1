@@ -2,12 +2,9 @@
 $pageTitle = "Edit Pengguna";
 $pageSubtitle = "Perbarui data dan role pengguna";
 
-$user = [
-    "id"    => 2,
-    "name"  => "Budi Santoso",
-    "email" => "budi.santoso@siswa.ski.sch.id",
-    "role"  => "member",
-];
+require_once '../../repositories/user-repository.php';
+
+$user = getUser();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -28,7 +25,7 @@ $user = [
       <?php require_once '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form method="POST" action="../../actions/users/update.php">
           <input type="hidden" name="id" value="<?= $user['id'] ?>">
           <div class="form-card">
             <div class="form-section-title">Data Pengguna</div>
@@ -45,8 +42,8 @@ $user = [
             <div class="form-group">
               <label for="role">Role</label>
               <select id="role" name="role">
-                <option value="member" <?= $user['role'] === 'member' ? 'selected' : '' ?>>Member</option>
-                <option value="admin" <?= $user['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
+                <option value="Member" <?= $user['role'] === 'Member' ? 'selected' : '' ?>>Member</option>
+                <option value="Admin" <?= $user['role'] === 'Admin' ? 'selected' : '' ?>>Admin</option>
               </select>
             </div>
 

@@ -2,11 +2,11 @@
 $pageTitle = "Edit Kategori";
 $pageSubtitle = "Perbarui data kategori";
 
-$category = [
-    "id"          => 1,
-    "name"        => "Fiksi",
-    "description" => "Novel dan cerita rekaan",
-];
+require_once '../../repositories/category-repository.php';
+
+$category = getCategory();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -27,7 +27,7 @@ $category = [
       <?php require_once '../../components/admin/topbar.php'; ?>
 
       <div class="app-content">
-        <form method="" action="">
+          <form method="POST" action="../../actions/categories/update.php">
           <input type="hidden" name="id" value="<?= $category['id'] ?>">
           <div class="form-card">
             <div class="form-section-title">Data Kategori</div>

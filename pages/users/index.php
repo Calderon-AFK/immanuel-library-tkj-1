@@ -67,7 +67,7 @@ $users = getUsers();
                   </td>
                   <td><?= $user['email'] ?></td>
                   <td>
-                    <?php if ($user['role'] === 'admin') : ?>
+                    <?php if ($user['role'] === 'Admin') : ?>
                       <span class="badge badge-admin">Admin</span>
                     <?php else : ?>
                       <span class="badge badge-member">Member</span>
