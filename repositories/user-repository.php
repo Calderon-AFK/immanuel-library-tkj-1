@@ -4,14 +4,26 @@ $users = [
     [
         'id' => 1,
         'name' => 'Admin Utama',
-        'email' => 'admin@gmail.com',
+        'email' => 'admin@ski.sch.id',
         'role' => 'Admin'
     ],
     [
         'id' => 2,
-        'name' => 'Richard Marcell',
-        'email' => 'richard@gmail.com',
+        'name' => 'Budi Santoso',
+        'email' => 'budi.santoso@siswa.ski.sch.id',
         'role' => 'Member'
+    ],
+    [
+        'id' => 3,
+        'name' => 'Siti Aminah',
+        'email' => 'siti.aminah@siswa.ski.sch.id',
+        'role' => 'Member'
+    ],
+    [
+        'id' => 4,
+        'name' => 'Richard Marcell',
+        'email' => 'richard.m@ski.sch.id',
+        'role' => 'Admin'
     ]
 ];
 

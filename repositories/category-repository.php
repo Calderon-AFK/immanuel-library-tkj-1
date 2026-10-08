@@ -1,9 +1,10 @@
 <?php
 
 $categories = [
-    ['id' => 1, 'name' => 'Pemrograman', 'description' => 'Buku-buku tentang pemrograman'],
-    ['id' => 2, 'name' => 'Basis Data', 'description' => 'Buku-buku tentang basis data'],
-    ['id' => 3, 'name' => 'Jaringan', 'description' => 'Buku-buku tentang jaringan komputer']
+    ['id' => 1, 'name' => 'Fiksi', 'description' => 'Novel dan cerita rekaan'],
+    ['id' => 2, 'name' => 'Sains', 'description' => 'Buku-buku tentang ilmu pengetahuan'],
+    ['id' => 3, 'name' => 'Sejarah', 'description' => 'Buku-buku tentang sejarah'],
+    ['id' => 4, 'name' => 'Teknologi', 'description' => 'Buku-buku tentang teknologi']
 ];
 
 function getCategories() {
