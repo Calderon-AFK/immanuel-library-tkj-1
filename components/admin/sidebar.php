@@ -1,14 +1,15 @@
-<aside class="w-64 bg-slate-800 text-white min-h-screen p-4 flex flex-col justify-between">
-    <div>
-        <div class="flex items-center space-x-3 mb-8 px-2">
-            <span class="text-2xl font-bold text-indigo-400">Immanuel Library</span>
-        </div>
-        <nav class="space-y-1">
-            <a href="/pages/books/index.php" class="block px-4 py-2.5 rounded hover:bg-slate-700">Manajemen Buku</a>
-            <a href="/pages/categories/index.php" class="block px-4 py-2.5 rounded hover:bg-slate-700">Manajemen Kategori</a>
-            <a href="/pages/authors/index.php" class="block px-4 py-2.5 rounded hover:bg-slate-700">Manajemen Penulis</a>
-            <a href="/pages/users/index.php" class="block px-4 py-2.5 rounded hover:bg-slate-700">Manajemen Pengguna</a>
-            <a href="/pages/profile/edit.php" class="block px-4 py-2.5 rounded hover:bg-slate-700">Profil Saya</a>
-        </nav>
-    </div>
-</aside>
+<aside class="app-sidebar">
+  <div class="brand">
+    <span class="logo-badge">PD</span>
+    Perpustakaan Digital
+  </div>
+  <div class="nav-group-label">Menu Utama</div>
+  <nav>
+    <a href="../../index.php" class=""><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg> Beranda</a>
+    <a href="../books/index.php" class=""><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg> Buku</a>
+    <a href="../categories/index.php" class=""><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg> Kategori</a>
+    <a href="../authors/index.php" class=""><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg> Penulis</a>
+    <a href="../users/index.php" class=""><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1"/><circle cx="9" cy="7" r="3.5"/><path d="M22 19v-1a3.5 3.5 0 0 0-2.5-3.36"/><path d="M15.5 4.14a3.5 3.5 0 0 1 0 6.72"/></svg> Pengguna</a>
+    <a href="../authors/index.php" class=""><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 19.5v-1a4.5 4.5 0 0 0-4.5-4.5h-5A4.5 4.5 0 0 0 5 18.5v1"/><circle cx="12" cy="7.5" r="4"/></svg> Profil Saya</a>
+  </nav>
+</aside>    
