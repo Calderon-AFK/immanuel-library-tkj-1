@@ -55,3 +55,16 @@ function getProfile() {
         'bio' => ''
     ];
 }
+
+function deleteUser($id) {
+    global $users;
+
+    foreach ($users as $key => $user) {
+        if ($user['id'] == $id) {
+            unset($users[$key]);
+            return true;
+        }
+    }
+
+    return false;
+}
