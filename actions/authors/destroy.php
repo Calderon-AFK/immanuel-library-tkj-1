@@ -1,7 +1,8 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'GET') {
-    header('Location: ../../pages/authors/index.php');
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
+    $id = $_GET['id'];
+    echo "Permintaan hapus penulis dengan ID: " . htmlspecialchars($id);
     exit();
 }
 
