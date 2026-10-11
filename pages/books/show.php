@@ -1,28 +1,26 @@
 <?php
-$pageTitle = "Detail Buku";
-$pageSubtitle = "Informasi lengkap buku beserta kategori dan penulis";
-
-require '../../repositories/book-repository.php';
+require_once __DIR__ . "/../../repositories/book-repository.php";
 
 $book = getBook();
+
+$pageTitle = "Detail Buku";
+$pageSubtitle = "Informasi lengkap buku beserta kategori dan penulis";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $pageTitle; ?> - Perpustakaan Digital</title>
+  <title>Detail Buku - Perpustakaan Digital</title>
   <link rel="stylesheet" href="../../styles/books/show.css">
 </head>
 <body>
   <div class="app-shell">
-    
-    <!-- Component Sidebar -->
-    <?php require_once '../../components/admin/sidebar.php'; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-      <!-- Component Topbar -->
-      <?php require_once '../../components/admin/topbar.php'; ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <div class="detail-grid">
@@ -39,7 +37,9 @@ $book = getBook();
               <div class="detail-label">Penulis</div>
               <div class="detail-value">
                 <div class="chip-list">
-                  <span class="chip"><?= $book['author'] ?></span>
+                  <?php foreach ($book['authors'] as $authorName): ?>
+                    <span class="chip"><?= $authorName ?></span>
+                  <?php endforeach; ?>
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@ $book = getBook();
             </div>
             <div class="detail-row">
               <div class="detail-label">Deskripsi</div>
-              <div class="detail-value"><?= $book['synopsis'] ?></div>
+              <div class="detail-value"><?= $book['description'] ?></div>
             </div>
 
             <div class="form-actions" style="border-top:none; padding-top:6px;">

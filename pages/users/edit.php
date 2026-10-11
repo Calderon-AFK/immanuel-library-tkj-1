@@ -1,28 +1,26 @@
 <?php
-$pageTitle = "Edit Pengguna";
-$pageSubtitle = "Perbarui data dan role pengguna";
-
-require_once '../../repositories/user-repository.php';
+require_once __DIR__ . "/../../repositories/user-repository.php";
 
 $user = getUser();
+
+$pageTitle = "Edit Pengguna";
+$pageSubtitle = "Perbarui data dan role pengguna";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $pageTitle; ?> - Perpustakaan Digital</title>
+  <title>Edit Pengguna - Perpustakaan Digital</title>
   <link rel="stylesheet" href="../../styles/users/edit.css">
 </head>
 <body>
   <div class="app-shell">
-    
-    <!-- Component Sidebar -->
-    <?php require_once '../../components/admin/sidebar.php'; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-      <!-- Component Topbar -->
-      <?php require_once '../../components/admin/topbar.php'; ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/users/update.php">
@@ -42,8 +40,8 @@ $user = getUser();
             <div class="form-group">
               <label for="role">Role</label>
               <select id="role" name="role">
-                <option value="Member" <?= $user['role'] === 'Member' ? 'selected' : '' ?>>Member</option>
-                <option value="Admin" <?= $user['role'] === 'Admin' ? 'selected' : '' ?>>Admin</option>
+                <option value="member" <?= $user['role'] === 'member' ? 'selected' : '' ?>>Member</option>
+                <option value="admin" <?= $user['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
               </select>
             </div>
 

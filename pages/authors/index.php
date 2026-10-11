@@ -1,30 +1,26 @@
 <?php
-$pageTitle = "Manajemen Penulis";
-$pageSubtitle = "Kelola data penulis yang terdaftar di sistem";
-
-require_once '../../repositories/author-repository.php';
-require_once '../../repositories/book-repository.php';
+require_once __DIR__ . "/../../repositories/author-repository.php";
 
 $authors = getAuthors();
-$books = getBooks();
+
+$pageTitle = "Manajemen Penulis";
+$pageSubtitle = "Kelola data penulis yang terdaftar di sistem";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $pageTitle; ?> - Perpustakaan Digital</title>
+  <title>Manajemen Penulis - Perpustakaan Digital</title>
   <link rel="stylesheet" href="../../styles/authors/index.css">
 </head>
 <body>
   <div class="app-shell">
-    
-    <!-- Component Sidebar -->
-    <?php require_once '../../components/admin/sidebar.php'; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-      <!-- Component Topbar -->
-      <?php require_once '../../components/admin/topbar.php'; ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <div class="toolbar">
@@ -48,7 +44,7 @@ $books = getBooks();
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($authors as $author) : ?>
+              <?php foreach ($authors as $author): ?>
                 <tr>
                   <td>
                     <div class="cell-primary">
@@ -56,15 +52,16 @@ $books = getBooks();
                       <?= $author['name'] ?>
                     </div>
                   </td>
-                  <td><span class="badge badge-muted"><?= count(array_filter($books, fn($book) => in_array($author['name'], $book['authors']))) ?> buku</span></td>
+                  <td><span class="badge badge-muted"><?= $author['total_books'] ?> buku</span></td>
                   <td>
                     <div class="cell-actions">
                       <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                      <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus penulis ini?')">Hapus</a>
+                      <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin ingin menghapus penulis ini?')">Hapus</a>
                     </div>
                   </td>
                 </tr>
-              <?php endforeach; ?>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>

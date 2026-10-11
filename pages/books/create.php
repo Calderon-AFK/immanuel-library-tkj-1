@@ -1,30 +1,30 @@
 <?php
-$pageTitle = "Tambah Buku";
-$pageSubtitle = "Lengkapi data buku, kategori, dan penulis";
-
-require_once '../../repositories/category-repository.php';
-require_once '../../repositories/author-repository.php';
+require_once __DIR__ . "/../../repositories/category-repository.php";
+require_once __DIR__ . "/../../repositories/author-repository.php";
 
 $categories = getCategories();
 $authors = getAuthors();
+
+$pageTitle = "Tambah Buku";
+$pageSubtitle = "Lengkapi data buku, kategori, dan penulis";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $pageTitle; ?> - Perpustakaan Digital</title>
+  <title>Tambah Buku - Perpustakaan Digital</title>
   <link rel="stylesheet" href="../../styles/books/create.css">
 </head>
+
 <body>
   <div class="app-shell">
-    
-    <!-- Component Sidebar -->
-    <?php require_once '../../components/admin/sidebar.php'; ?>
+    <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-      <!-- Component Topbar -->
-      <?php require_once '../../components/admin/topbar.php'; ?>
+      <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/books/store.php">
@@ -52,7 +52,6 @@ $authors = getAuthors();
               <div class="form-group">
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
-                  <option value="">Pilih Kategori</option>
                   <?php foreach ($categories as $category): ?>
                     <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
                   <?php endforeach; ?>
@@ -89,4 +88,5 @@ $authors = getAuthors();
     </main>
   </div>
 </body>
+
 </html>

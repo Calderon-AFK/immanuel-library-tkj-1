@@ -1,30 +1,28 @@
 <?php
-$pageTitle = "Edit Penulis";
-$pageSubtitle = "Perbarui data penulis";
-
-require_once '../../repositories/author-repository.php';
+require_once __DIR__ . "/../../repositories/author-repository.php";
 
 $author = getAuthor();
 
+$pageTitle = "Edit Penulis";
+$pageSubtitle = "Perbarui data penulis";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $pageTitle; ?> - Perpustakaan Digital</title>
+  <title>Edit Penulis - Perpustakaan Digital</title>
   <link rel="stylesheet" href="../../styles/authors/edit.css">
 </head>
 
 <body>
   <div class="app-shell">
-    
-    <!-- Component Sidebar -->
-    <?php require_once '../../components/admin/sidebar.php'; ?>
+    <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-      <!-- Component Topbar -->
-      <?php require_once '../../components/admin/topbar.php'; ?>
+      <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/authors/update.php">
@@ -49,4 +47,5 @@ $author = getAuthor();
     </main>
   </div>
 </body>
+
 </html>

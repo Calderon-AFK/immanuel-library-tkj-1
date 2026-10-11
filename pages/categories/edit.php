@@ -1,33 +1,29 @@
 <?php
-$pageTitle = "Edit Kategori";
-$pageSubtitle = "Perbarui data kategori";
-
-require_once '../../repositories/category-repository.php';
+require_once __DIR__ . "/../../repositories/category-repository.php";
 
 $category = getCategory();
 
-
+$pageTitle = "Edit Kategori";
+$pageSubtitle = "Perbarui data kategori";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $pageTitle; ?> - Perpustakaan Digital</title>
+  <title>Edit Kategori - Perpustakaan Digital</title>
   <link rel="stylesheet" href="../../styles/categories/edit.css">
 </head>
 <body>
   <div class="app-shell">
-    
-    <!-- Component Sidebar -->
-    <?php require_once '../../components/admin/sidebar.php'; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
     <main class="app-main">
-      <!-- Component Topbar -->
-      <?php require_once '../../components/admin/topbar.php'; ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
-          <form method="POST" action="../../actions/categories/update.php">
+        <form method="POST" action="../../actions/categories/update.php">
           <input type="hidden" name="id" value="<?= $category['id'] ?>">
           <div class="form-card">
             <div class="form-section-title">Data Kategori</div>
