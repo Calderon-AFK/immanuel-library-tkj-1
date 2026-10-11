@@ -1,9 +1,9 @@
 <?php
+if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $name = $_POST['name'];
+    $bio = $_POST['bio'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['store'])) {
     print_r($_POST);
-    exit();
 }
 
-header('Location: ../../pages/authors/index.php');
-exit();
+?>

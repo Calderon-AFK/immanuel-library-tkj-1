@@ -1,9 +1,8 @@
 <?php
+if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === "GET") {
+    $id = $_GET['id'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'GET') {
-    header('Location: ../../pages/categories/index.php');
-    exit();
+    echo "Kategori dengan id " . htmlspecialchars($id) . " berhasil dihapus.";
 }
 
-header('Location: ../../pages/categories/index.php');
-exit();
+?>

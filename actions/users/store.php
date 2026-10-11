@@ -1,9 +1,11 @@
 <?php
+if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $role = $_POST['role'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['store'])) {
     print_r($_POST);
-    exit();
 }
 
-header('Location: ../../pages/users/index.php');
-exit();
+?>

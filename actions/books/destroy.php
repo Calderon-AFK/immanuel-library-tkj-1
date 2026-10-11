@@ -1,10 +1,8 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
+if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === "GET") {
     $id = $_GET['id'];
-    echo "Permintaan hapus buku dengan ID: " . htmlspecialchars($id);
-    exit();
+
+    echo "Buku dengan id " . htmlspecialchars($id) . " berhasil dihapus.";
 }
 
-header('Location: ../../pages/books/index.php');
-exit(); 
+?>

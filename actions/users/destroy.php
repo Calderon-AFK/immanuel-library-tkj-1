@@ -1,15 +1,8 @@
 <?php
+if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === "GET") {
+    $id = $_GET['id'];
 
-if (!isset($_GET['id'])) {
-    header('Location: ../../pages/users/index.php');
-    exit();
+    echo "Pengguna dengan id " . htmlspecialchars($id) . " berhasil dihapus.";
 }
 
-$id = $_GET['id'];
-
-require_once '../../repositories/user-repository.php';
-
-deleteUser($id);
-
-header('Location: ../../pages/users/index.php');
-exit();
+?>

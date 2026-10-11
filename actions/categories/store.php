@@ -1,10 +1,9 @@
 <?php
+if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $name = $_POST['name'];
+    $description = $_POST['description'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
-    $id = $_GET['id'];
-    echo "Permintaan hapus kategori dengan ID: " . htmlspecialchars($id);
-    exit();
+    print_r($_POST);
 }
 
-header('Location: ../../pages/categories/index.php');
-exit(); 
+?>
