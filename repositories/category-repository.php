@@ -1,17 +1,24 @@
-<?php function getCategories()
+<?php
+
+function getCategories()
 {
-    return [['id' => 1, 'name' => 'Fiksi', 'description' => 'Novel dan cerita rekaan'], ['id' => 2, 'name' => 'Sains', 'description' => 'Buku-buku tentang ilmu pengetahuan'], ['id' => 3, 'name' => 'Sejarah', 'description' => 'Buku-buku tentang sejarah'], ['id' => 4, 'name' => 'Teknologi', 'description' => 'Buku-buku tentang teknologi']];
+  $categories = [
+    ["id" => 1, "name" => "Fiksi",     "description" => "Novel dan cerita rekaan",        "total_books" => 3],
+    ["id" => 2, "name" => "Sains",     "description" => "Buku ilmu pengetahuan alam",      "total_books" => 0],
+    ["id" => 3, "name" => "Sejarah",   "description" => "Buku sejarah dan biografi",       "total_books" => 1],
+    ["id" => 4, "name" => "Teknologi", "description" => "Buku pemrograman dan teknologi",  "total_books" => 0],
+  ];
+
+  return $categories;
 }
-function getCategory($id = null)
+
+function getCategory()
 {
-    $categories = getCategories();
-    if ($id === null) {
-        return $categories[0] ?? null;
-    }
-    foreach ($categories as $category) {
-        if ($category['id'] == $id) {
-            return $category;
-        }
-    }
-    return $categories[0] ?? null;
+  $category = [
+    "id"          => 1,
+    "name"        => "Fiksi",
+    "description" => "Novel dan cerita rekaan",
+  ];
+
+  return $category;
 }

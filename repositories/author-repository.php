@@ -1,27 +1,25 @@
 <?php
 
-$authors = [
-    ['id' => 1, 'name' => 'Andrea Hirata', 'email' => 'andrea@example.com', 'bio' => 'Penulis novel Indonesia'],
-    ['id' => 2, 'name' => 'Tere Liye', 'email' => 'tere@example.com', 'bio' => 'Penulis novel Indonesia'],
-    ['id' => 3, 'name' => 'J.K. Rowling', 'email' => 'jk@example.com', 'bio' => 'Penulis seri Harry Potter'],
-    ['id' => 4, 'name' => 'Pramoedya Ananta Toer', 'email' => 'pramoedya@example.com', 'bio' => 'Sastrawan Indonesia'],
-    ['id' => 5, 'name' => 'Sapardi Djoko Damono', 'email' => 'sapardi@example.com', 'bio' => 'Penyair dan sastrawan Indonesia']
-];
+function getAuthors()
+{
+  $authors = [
+    ["id" => 1, "name" => "Andrea Hirata",          "total_books" => 1],
+    ["id" => 2, "name" => "Tere Liye",               "total_books" => 1],
+    ["id" => 3, "name" => "J.K. Rowling",            "total_books" => 1],
+    ["id" => 4, "name" => "Pramoedya Ananta Toer",   "total_books" => 2],
+    ["id" => 5, "name" => "Sapardi Djoko Damono",    "total_books" => 1],
+  ];
 
-function getAuthors() {
-    global $authors;
-    return $authors;
+  return $authors;
 }
 
-function getAuthor($id = null) {
-    global $authors;
-    if ($id === null) {
-        return $authors[0] ?? null;
-    }
-    foreach ($authors as $author) {
-        if ($author['id'] == $id) {
-            return $author;
-        }
-    }
-    return $authors[0] ?? null;
+function getAuthor()
+{
+  $author = [
+    "id"   => 1,
+    "name" => "Andrea Hirata",
+    "bio"  => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.",
+  ];
+
+  return $author;
 }
