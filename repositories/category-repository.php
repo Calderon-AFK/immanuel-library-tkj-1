@@ -1,3 +1,4 @@
+
 <?php
 
 require_once __DIR__ . '/../config/database.php';
@@ -6,7 +7,15 @@ function getCategories()
 {
     global $pdo;
 
-    $query = "select * from categories";
+    $query = "
+        SELECT
+            categories.*,
+            COUNT(books.id) AS total_books
+        FROM categories
+        LEFT JOIN books ON books.category_id = categories.id
+        GROUP BY categories.id
+    ";
+
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 
@@ -17,11 +26,11 @@ function getCategories()
 
 function getCategory()
 {
-  $category = [
-    "id"          => 1,
-    "name"        => "Fiksi",
-    "description" => "Novel dan cerita rekaan",
-  ];
+    $category = [
+        "id"          => 1,
+        "name"        => "Fiksi",
+        "description" => "Novel dan cerita rekaan",
+    ];
 
-  return $category;
+    return $category;
 }
