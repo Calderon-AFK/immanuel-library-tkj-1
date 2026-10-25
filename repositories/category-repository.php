@@ -34,3 +34,16 @@ function getCategory()
 
     return $category;
 }
+
+function isCategoryExists($id)
+{
+    global $pdo;
+
+    $query = "SELECT id FROM categories WHERE id = :id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute(['id' => $id]);
+
+    return $stmt->fetch() !== false;
+}
+
+
